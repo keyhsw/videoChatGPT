@@ -29,7 +29,7 @@ os.system('git clone https://huggingface.co/mrm8488/flan-t5-large-finetuned-open
 Openai_Key = os.getenv('Openai_key')
 
 # define model
-model = tag2text_caption(pretrained="pretrained_models/tag2text_swin_14m.pth", image_size=image_size, vit='swin_b' )
+model = tag2text_caption(pretrained="/home/xlab-app-center/pretrained_models/tag2text_swin_14m.pth", image_size=image_size, vit='swin_b' )
 model.eval()
 model = model.to(device)
 print("[INFO] initialize caption model success!")
@@ -37,10 +37,10 @@ print("[INFO] initialize caption model success!")
 model_T5 = SimpleT5()
 if torch.cuda.is_available():
     model_T5.load_model(
-        "t5", "./pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback", use_gpu=True)
+        "t5", "/home/xlab-app-center/pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback", use_gpu=True)
 else:
     model_T5.load_model(
-        "t5", "./pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback", use_gpu=False)
+        "t5", "/home/xlab-app-center/pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback", use_gpu=False)
 print("[INFO] initialize summarize model success!")
 # action recognition
 intern_action = load_intern_action(device)
