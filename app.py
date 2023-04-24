@@ -27,7 +27,7 @@ os.system('git clone https://huggingface.co/mrm8488/flan-t5-large-finetuned-open
 
 # Configure the necessary ChatGPT APIs
 Openai_Key = os.getenv('Openai_key')
-os.system(export OPENAI_API_KEY=Openai_key)
+os.system('export OPENAI_API_KEY=Openai_key')
 
 # define model
 model = tag2text_caption(pretrained="pretrained_models/tag2text_swin_14m.pth", image_size=image_size, vit='swin_b' )
