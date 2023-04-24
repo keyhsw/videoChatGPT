@@ -21,13 +21,12 @@ normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
 transform = transforms.Compose([transforms.ToPILImage(),transforms.Resize((image_size, image_size)),transforms.ToTensor(),normalize])
 
 # Download the checkpoints
-os.system('wget https://huggingface.co/spaces/xinyu1205/Tag2Text/resolve/main/tag2text_swin_14m.pth ./pretrained_models/tag2text_swin_14m.pth')
-os.system('wget wget https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth ./pretrained_models/grit_b_densecap_objectdet.pth')
-os.system('git clone https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback')
+os.system('wget https://huggingface.co/spaces/xinyu1205/Tag2Text/resolve/main/tag2text_swin_14m.pth /home/xlab-app-center/pretrained_models/tag2text_swin_14m.pth')
+os.system('wget wget https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth /home/xlab-app-center/pretrained_models/grit_b_densecap_objectdet.pth')
+os.system('git clone https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback /home/xlab-app-center/pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback')
 
 # Configure the necessary ChatGPT APIs
 Openai_Key = os.getenv('Openai_key')
-os.system('export OPENAI_API_KEY=Openai_key')
 
 # define model
 model = tag2text_caption(pretrained="pretrained_models/tag2text_swin_14m.pth", image_size=image_size, vit='swin_b' )
