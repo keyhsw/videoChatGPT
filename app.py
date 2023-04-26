@@ -24,7 +24,7 @@ transform = transforms.Compose([transforms.ToPILImage(),transforms.Resize((image
 os.system('wget -P /home/xlab-app-center/pretrained_models/ https://huggingface.co/spaces/xinyu1205/Tag2Text/resolve/main/tag2text_swin_14m.pth')
 os.system('wget -P /home/xlab-app-center/pretrained_models/ https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth')
 # os.system('git clone https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback /home/xlab-app-center/pretrained_models/')
-# os.system('wget -P /home/xlab-app-center/pretrained_models/ https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback/resolve/main/pytorch_model.bin')
+os.system('wget -P /home/xlab-app-center/pretrained_models/ https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback/resolve/main/pytorch_model.bin')
 
 # Configure the necessary ChatGPT APIs
 Openai_Key = os.getenv('Openai_key')
@@ -38,10 +38,10 @@ print("[INFO] initialize caption model success!")
 model_T5 = SimpleT5()
 if torch.cuda.is_available():
     model_T5.load_model(
-        "t5", "https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback", use_gpu=True)
+        "t5", "./pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback", use_gpu=True)
 else:
     model_T5.load_model(
-        "t5", "https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback", use_gpu=False)
+        "t5", "./pretrained_models/flan-t5-large-finetuned-openai-summarize_from_feedback", use_gpu=False)
 print("[INFO] initialize summarize model success!")
 # action recognition
 intern_action = load_intern_action(device)
