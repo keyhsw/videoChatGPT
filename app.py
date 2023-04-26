@@ -24,7 +24,7 @@ transform = transforms.Compose([transforms.ToPILImage(),transforms.Resize((image
 os.system('wget -P /home/xlab-app-center/pretrained_models/ https://huggingface.co/spaces/xinyu1205/Tag2Text/resolve/main/tag2text_swin_14m.pth')
 os.system('wget -P /home/xlab-app-center/pretrained_models/ https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth')
 # os.system('git clone https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback /home/xlab-app-center/pretrained_models/')
-os.system('wget -P /home/xlab-app-center/pretrained_models/ https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback/resolve/main/pytorch_model.bin')
+os.system('wget -P /home/xlab-app-center/pretrained_models/ https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback')
 
 # Configure the necessary ChatGPT APIs
 Openai_Key = os.getenv('Openai_key')
