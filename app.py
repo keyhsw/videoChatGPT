@@ -26,9 +26,6 @@ os.system('wget -P /home/xlab-app-center/pretrained_models/ https://datarelease.
 # os.system('git clone https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback /home/xlab-app-center/pretrained_models/')
 os.system('wget -P /home/xlab-app-center/pretrained_models/ https://huggingface.co/mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback')
 
-# Configure the necessary ChatGPT APIs
-Openai_Key = os.getenv('Openai_key')
-
 # define model
 model = tag2text_caption(pretrained="/home/xlab-app-center/pretrained_models/tag2text_swin_14m.pth", image_size=image_size, vit='swin_b' )
 model.eval()
