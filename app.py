@@ -38,10 +38,10 @@ print("[INFO] initialize caption model success!")
 model_T5 = SimpleT5()
 if torch.cuda.is_available():
     model_T5.load_model(
-        "t5", "./mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback/blob/main/", use_gpu=True)
+        "t5", "./mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback", use_gpu=True)
 else:
     model_T5.load_model(
-        "t5", "./mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback/blob/main/", use_gpu=False)
+        "t5", "./mrm8488/flan-t5-large-finetuned-openai-summarize_from_feedback", use_gpu=False)
 print("[INFO] initialize summarize model success!")
 # action recognition
 intern_action = load_intern_action(device)
